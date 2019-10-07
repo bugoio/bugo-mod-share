@@ -8,29 +8,53 @@
 <!-- Social Button HTML -->
 {{ .Summary | safeHTMLAttr }}
 <div class="share-buttons">
-  <span>
+  <span class="share-text">
     Share:
   </span>
   <!-- Twitter -->
-  <a href="http://twitter.com/share?url={{ .Permalink | absURL }}" target="new" class="btn share-btn twitter" title="Share on Twitter (Opens in a new window)" aria-label="Share on Twitter (Opens in a new window)" tabindex="0">
-    {{ partial "icons/twitter" }}
-    <span class="sr-only">Share on Twitter (Opens in a new window)</span>
-  </a>
+  <button class="share-button bg-white fill-primary" data-sharer="twitter" data-title="{{ .Title }}" data-url="{{ .Permalink }}">
+      {{ partial "icon" (slice "twitter" "icon-small")}}
+  </button>
 
   <!-- Facebook -->
-  <a href="http://www.facebook.com/sharer/sharer.php?u={{ .Permalink }}" target="new" class="btn share-btn facebook" title="Share on Faecbook (Opens in a new window)" aria-label="Share on Faecbook (Opens in a new window)" tabindex="0">
-    {{ partial "icons/facebook" }}
+  <button class="share-button" data-sharer="facebook" data-url="{{ .Permalink }}">
+    {{ partial "icon" (slice "facebook-square" "icon-small")}}
+  </button>
+  {{/*  <a href="http://www.facebook.com/sharer/sharer.php?u={{ .Permalink }}" target="new" class="btn share-btn facebook" title="Share on Faecbook (Opens in a new window)" aria-label="Share on Faecbook (Opens in a new window)" tabindex="0">
+    {{ partial "icon" (slice "facebook-square" "icon-small")}}
     <span class="sr-only">Share on Faecbook (Opens in a new window)</span>
-  </a>
+  </a>  */}}
 
   <!-- LinkedIn -->
-  <a href="http://www.linkedin.com/shareArticle?url={{ .Permalink }}&title={{ .Title  | urlize }}&summary={{ .Summary  }}&source={{ .Permalink | urlize }}" target="new" class="btn share-btn linkedin" title="Share on LinkedIn (Opens in a new window)" aria-label="Share on LinkedIn" tabindex="0">
-    {{ partial "icons/linkedin"}}
-    <span class="sr-only">Share on LinkedIn (Opens in a new window)</span>
-  </a>
+  <button class="share-button" data-sharer="linkedin" data-url="{{ .Permalink }}">
+      {{ partial "icon" (slice "linkedin" "icon-small")}}
+  </button>
+
+{{/*  <a href="http://www.linkedin.com/shareArticle?url={{ .Permalink }}&title={{ .Title  | urlize }}&summary={{ .Summary  }}&source={{ .Permalink | urlize }}" target="new" class="btn share-btn linkedin" title="Share on LinkedIn (Opens in a new window)" aria-label="Share on LinkedIn" tabindex="0">
+  {{ partial "icon" (slice "linkedin" "icon-small")}}
+  <span class="sr-only">Share on LinkedIn (Opens in a new window)</span>
+</a>  */}}
   <!-- Email -->
-  <a href="mailto:?subject={{ .Title | urlize }}&body={{ .Title }}%0A%0A{{ .Permalink | absURL }}%0A%0A{{ .Summary }}" target="new" class="btn share-btn email" title="Share by Email (Opens in a new window)" aria-label="Share by Email (Opens in a new window)" tabindex="0">
-    {{ partial "icons/envelope" }}
-    <span class="sr-only">Share by Email (Opens in a new window)</span>
-  </a>
+  <button
+    class="share-button"
+    data-sharer="email"
+    data-title="{{ .Title }}"
+    data-url="{{ .Permalink }}"
+    data-subject="Hey! Check this out: {{ .Title }}"
+    data-to="some@email.com">
+    {{ partial "icon" (slice "envelope" "icon-small")}}
+  </button>
+  {{/*  <a href="mailto:?subject={{ .Title | urlize }}&body={{ .Title }}%0A%0A{{ .Permalink | absURL }}%0A%0A{{ .Summary }}" target="new" class="btn share-btn email" title="Share by Email (Opens in a new window)" aria-label="Share by Email (Opens in a new window)" tabindex="0">
+      {{ partial "icon" (slice "envelope" "icon-small")}}
+      <span class="sr-only">Share by Email (Opens in a new window)</span>
+  </a>  */}}
+
+
+  <div class="share-modal">
+    <div class="share-window">
+      <iframe src="#" frameborder="0" class="share-iframe">
+
+      </iframe>
+    </div>
+  </div>
 </div>

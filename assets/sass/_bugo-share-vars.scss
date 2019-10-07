@@ -19,7 +19,7 @@
   $share-padding-left: false !default; // false | modular scale
 
   $share-link-margin-top: false !default; //
-  $share-link-margin-right: false !default; // false | modular scale
+  $share-link-margin-right: -6 !default; // false | modular scale
   $share-link-margin-bottom: flase !default; // false | modular scale
   $share-link-margin-left: false !default; // false | modular scale
 
@@ -32,3 +32,5 @@
   $share-icon-width: 1;
   $share-icon-fill: $primary;
   $share-icon-fill-dark: $primary;
+
+  $share-modal-bg: transparentize($black,.5);
