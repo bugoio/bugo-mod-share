@@ -2,4 +2,4 @@ module github.com/bugoio/bugo-mod-share
 
 go 1.12
 
-require github.com/bugoio/bugo-sass-utilities v0.0.7 // indirect
+require github.com/bugoio/bugo-font-awesome v0.1.7 // indirect
