@@ -1,0 +1,27 @@
+/**
+ * BUGO SHARE VARIABLES
+ **/
+
+@import "bugo-share-vars";
+
+.share-buttons {
+  @include set-margin($share-margin-top, $share-margin-right, $share-margin-bottom, $share-margin-left);
+  @include set-padding($share-padding-top, $share-padding-right, $share-padding-bottom, $share-padding-left);
+
+  a {
+    text-decoration: none;
+    @include set-margin($share-link-margin-top, $share-link-margin-right, $share-link-margin-bottom, $share-link-margin-left);
+    @include set-padding($share-link-padding-top, $share-link-padding-right, $share-link-padding-bottom, $share-link-padding-left);
+
+    svg {
+      @include ms-respond(width, $share-icon-width);
+      height: auto;
+      fill: $share-icon-fill;
+      @if $global-dark-mode = false {
+        @media (prefers-color-scheme: dark) {
+          fill: $share-icon-fill-dark;
+        }
+      }
+    }
+  }
+}
