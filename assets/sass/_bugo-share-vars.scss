@@ -8,9 +8,9 @@
   * * false value parses to 0
   **/
 
-  $share-margin-top: false !default; //
+  $share-margin-top: 2 !default; //
   $share-margin-right: false !default; // false | modular scale
-  $share-margin-bottom: flase !default; // false | modular scale
+  $share-margin-bottom: 2 !default; // false | modular scale
   $share-margin-left: false !default; // false | modular scale
 
   $share-padding-top: false !default; // false | modular scale
@@ -19,9 +19,9 @@
   $share-padding-left: false !default; // false | modular scale
 
   $share-link-margin-top: false !default; //
-  $share-link-margin-right: -6 !default; // false | modular scale
+  $share-link-margin-right: false !default; // false | modular scale
   $share-link-margin-bottom: flase !default; // false | modular scale
-  $share-link-margin-left: false !default; // false | modular scale
+  $share-link-margin-left: -5 !default; // false | modular scale
 
   $share-link-padding-top: false !default; // false | modular scale
   $share-link-padding-right: false !default; // false | modular scale

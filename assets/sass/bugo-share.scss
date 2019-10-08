@@ -7,6 +7,8 @@
 .share-buttons {
   @include set-margin($share-margin-top, $share-margin-right, $share-margin-bottom, $share-margin-left);
   @include set-padding($share-padding-top, $share-padding-right, $share-padding-bottom, $share-padding-left);
+  display: flex;
+  align-content: center;
 
   .share-button {
     background-color: transparent;
