@@ -6,14 +6,13 @@
    **/}}
 
 <!-- Social Button HTML -->
-{{ .Summary | safeHTMLAttr }}
 <div class="share-buttons">
   <span class="share-text">
     Share:
   </span>
   <!-- Twitter -->
   <button class="share-button bg-white fill-primary" data-sharer="twitter" data-title="{{ .Title }}" data-url="{{ .Permalink }}">
-      {{ partial "icon" (slice "twitter" "icon-small")}}
+      {{ partial "icon" (slice "twitter-square" "icon-small")}}
   </button>
 
   <!-- Facebook -->
@@ -42,7 +41,7 @@
     data-url="{{ .Permalink }}"
     data-subject="Hey! Check this out: {{ .Title }}"
     data-to="some@email.com">
-    {{ partial "icon" (slice "envelope" "icon-small")}}
+    {{ partial "icon" (slice "envelope-square" "icon-small")}}
   </button>
   {{/*  <a href="mailto:?subject={{ .Title | urlize }}&body={{ .Title }}%0A%0A{{ .Permalink | absURL }}%0A%0A{{ .Summary }}" target="new" class="btn share-btn email" title="Share by Email (Opens in a new window)" aria-label="Share by Email (Opens in a new window)" tabindex="0">
       {{ partial "icon" (slice "envelope" "icon-small")}}
